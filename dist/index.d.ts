@@ -1,6 +1,6 @@
-import { MouseEventHandler, FC, ChangeEventHandler } from 'react';
+import { MouseEventHandler, FC } from 'react';
 
-interface ButtonProps {
+interface SoftButtonProps {
     text?: string;
     primary?: boolean;
     disabled?: boolean;
@@ -8,19 +8,6 @@ interface ButtonProps {
     onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-declare const Button: FC<ButtonProps>;
+declare const SoftButton: FC<SoftButtonProps>;
 
-interface InputProps {
-    id?: string;
-    label?: string;
-    error?: boolean;
-    message?: string;
-    success?: boolean;
-    disabled?: boolean;
-    placeholder?: string;
-    onChange?: ChangeEventHandler<HTMLInputElement>;
-}
-
-declare const Input: FC<InputProps>;
-
-export { Button, Input };
+export { SoftButton };

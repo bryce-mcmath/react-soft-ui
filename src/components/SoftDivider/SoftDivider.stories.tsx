@@ -1,25 +1,27 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Button from './Button';
+import SoftDivider from './SoftDivider';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'react-soft-ui/Button',
-  component: Button,
+  title: 'react-soft-ui/SoftDivider',
+  component: SoftDivider,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof SoftDivider>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof SoftDivider> = (args) => {
+  return (<SoftDivider {...args}></SoftDivider>);
+};
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
+
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  text: 'My Button',
-  size: 'medium',
-  disabled: false,
-  onClick: () => alert('Alert')
+Default.args = {
+  height: '',
+  width: '',
+  margin: '',
+  borderRadius: '',
 };

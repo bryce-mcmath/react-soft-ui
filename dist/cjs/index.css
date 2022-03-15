@@ -1,0 +1,14 @@
+:root {
+  --soft-base-font-size: 10px;
+  --soft-font-family: "Montserrat", sans-serif;
+  --soft-bg-color: #ecf0f3;
+  --soft-text-primary: #333;
+  --soft-light-shadow: #fff;
+  --soft-dark-shadow: #888;
+  --soft-highlight-light: #b689ff;
+  --soft-highlight-dark: #ac19f0;
+
+  font-size: var(--soft-base-font-size);
+  font-family: var(--soft-font-family);
+  background-color: var(--soft-bg-color);
+}

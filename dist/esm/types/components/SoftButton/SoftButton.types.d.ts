@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-export interface ButtonProps {
+export interface SoftButtonProps {
     text?: string;
     primary?: boolean;
     disabled?: boolean;
