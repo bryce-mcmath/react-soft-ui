@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 import { SoftIconButtonProps } from "./SoftIconButton.types";
 
+// pointer-events is a workaround for the icon still being clickable when button is disabled for some reason
 const StyledSoftIconButton = styled.button<SoftIconButtonProps>`
   cursor: ${props => props.disabled ? 'not-allowed': 'pointer'};
+  pointer-events: ${props => props.disabled ? 'none': ''};
   border: none;
   border-radius: ${props => props.rounded ? '40px': '5px'};
   display: inline-block;
@@ -123,14 +125,21 @@ const StyledIcon = styled(props => props.icon.render())`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(1.5)
+  transform: translate(-50%, -50%) scale(1.5);
+`;
+
+const StyledWrapper = styled.div<{disabled: boolean | undefined}>`
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  display: inline-block;
 `;
 
 const SoftIconButton: FC<SoftIconButtonProps> = ({icon, size = 'm', colored, disabled, onClick, children, ...props}) => {
   return (
-    <StyledSoftIconButton icon={icon} type="button" onClick={onClick} colored={colored} disabled={disabled} size={size} {...props}>
-      <StyledIcon icon={icon}></StyledIcon>
-    </StyledSoftIconButton>
+    <StyledWrapper disabled={disabled}>
+      <StyledSoftIconButton icon={icon} type="button" onClick={onClick} colored={colored} disabled={disabled} size={size} {...props}>
+        <StyledIcon icon={icon}></StyledIcon>
+      </StyledSoftIconButton>
+    </StyledWrapper>
   );
 };
 
