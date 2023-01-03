@@ -94,7 +94,7 @@ npm run test
 
 ## Versioning
 
-[SemVer](http://semver.org/) will only start being used for versioning once the base library is complete (1.0.0). For the versions available, see the [tags on this repository](https://github.com/bryce-mcmath/react-soft-ui/tags).
+[SemVer](http://semver.org/) will only start being used for versioning once the base collection of components is complete (1.0.0). For the versions available, see the [tags on this repository](https://github.com/bryce-mcmath/react-soft-ui/tags).
 
 ## Release history
 
